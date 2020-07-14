@@ -9,17 +9,4 @@
     <Folder Include="Extensions\" />
     <Folder Include="Models\" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="TextToSpeechClient.cs" />
-    <Compile Remove="TextToSpeechClient %28copy%29.cs" />
-    <Compile Remove="SpeechToTextModel.cs" />
-    <Compile Remove="TextToSpeechModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Clients\SpeechToTextClient.cs" />
-    <Compile Include="Clients\TextToSpeechClient.cs" />
-    <Compile Include="Extensions\HttpClientExtensions.cs" />
-    <Compile Include="Models\SpeechToTextModel.cs" />
-    <Compile Include="Models\TextToSpeechModel.cs" />
-  </ItemGroup>
 </Project>
