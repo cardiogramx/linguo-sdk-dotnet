@@ -17,7 +17,6 @@ namespace Linguo
             WriteIndented = true
         };
 
-
         internal async static ValueTask<T> PostAsync<T>(this HttpClient httpClient, string url, object obj, CancellationToken cancellationToken = default)
         {
             try

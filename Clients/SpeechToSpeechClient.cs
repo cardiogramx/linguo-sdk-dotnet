@@ -9,7 +9,7 @@ namespace Linguo
 {
     public partial class LinguoClient
     {
-        public async Task<byte[]> GetAudioFromAudioAsync(SpeechToTextModel model, CancellationToken cancellationToken = default)
+        public async ValueTask<byte[]> GetAudioFromAudioAsync(SpeechToTextModel model, CancellationToken cancellationToken = default)
         {
             if (model.Source.Equals(model.Target, StringComparison.OrdinalIgnoreCase))
             {

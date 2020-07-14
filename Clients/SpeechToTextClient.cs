@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -10,7 +8,7 @@ namespace Linguo
 {
     public partial class LinguoClient
     {
-        public async Task<string> GetTextFromAudioAsync(SpeechToTextModel model, CancellationToken cancellationToken = default)
+        public async ValueTask<string> GetTextFromAudioAsync(SpeechToTextModel model, CancellationToken cancellationToken = default)
         {
             using (var formData = new MultipartFormDataContent())
             {

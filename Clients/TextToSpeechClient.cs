@@ -6,10 +6,10 @@ namespace Linguo
 {
     public partial class LinguoClient
     {
-        public async Task<byte[]> GetAudioFromTextAsync(TextToSpeechModel tts, CancellationToken cancellationToken = default) =>
-            await _httpClient.PostAsync<byte[]>("/api/v1/Speech/GetAudioFromText", tts, cancellationToken);
+        public async ValueTask<byte[]> GetAudioFromTextAsync(TextToSpeechModel model, CancellationToken cancellationToken = default) =>
+            await _httpClient.PostAsync<byte[]>("/api/v1/Speech/GetAudioFromText", model, cancellationToken);
 
-        public async Task DownloadAudioAsync(TextToSpeechModel tts, string filePath, CancellationToken cancellationToken = default) =>
-            await File.WriteAllBytesAsync(filePath, await GetAudioFromTextAsync(tts, cancellationToken), cancellationToken);
+        public async ValueTask DownloadAudioAsync(TextToSpeechModel model, string filePath, CancellationToken cancellationToken = default) =>
+            await File.WriteAllBytesAsync(filePath, await GetAudioFromTextAsync(model, cancellationToken), cancellationToken);
     }
 }
