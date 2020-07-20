@@ -18,7 +18,7 @@ namespace Linguo
 
             using (var formData = new MultipartFormDataContent())
             {
-                using (var fileStream = File.OpenRead(model.FileName))
+                await using(var fileStream = File.OpenRead(model.FileName))
                 {
                     using (var streamContent = new StreamContent(fileStream))
                     {

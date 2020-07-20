@@ -14,7 +14,7 @@ namespace Linguo
         {
             if (string.IsNullOrWhiteSpace(apiKey))
             {
-                throw new ArgumentNullException("ApiKey can not be empty");
+                throw new ArgumentNullException(nameof(apiKey));
             }
 
             _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
@@ -26,7 +26,7 @@ namespace Linguo
         {
             if (string.IsNullOrWhiteSpace(apiKey))
             {
-                throw new ArgumentNullException("ApiKey can not be empty");
+                throw new ArgumentNullException(nameof(apiKey));
             }
 
             _httpClient = httpClient;
